@@ -113,7 +113,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <div className="flex-1 flex flex-col min-w-0">
         {/* Top Header */}
         <header className="h-20 bg-white border-b border-slate-200 flex justify-between items-center px-8 no-print shrink-0">
-          <div className="text-xl font-bold text-slate-900 tracking-tight">WEXO PROPOSALS</div>
+          <div className="text-xl font-bold text-slate-900 tracking-tight">PROPOSTAS WEXO</div>
           
           <div className="flex items-center gap-6">
             <button className="text-slate-400 hover:text-slate-600 transition-colors relative">

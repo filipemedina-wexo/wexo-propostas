@@ -8,7 +8,7 @@ const ShareQuote: React.FC = () => {
 
     const baseUrl = window.location.href.split('#')[0];
     const shareUrl = `${baseUrl}#/view/${id}`;
-    const password = "wexo"; // Default password as per current authService logic
+    const password = "wexo26"; // Default password as per current authService logic
 
     const fullMessage = `Olá! Segue o link da sua proposta comercial:\n\n${shareUrl}\n\nSenha de acesso: ${password}`;
 

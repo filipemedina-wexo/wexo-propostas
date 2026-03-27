@@ -65,7 +65,9 @@ const CreateQuote: React.FC = () => {
       const methods = await getAllPaymentMethods();
       setPaymentMethods(methods);
 
-
+      // Load Available Services
+      const services = await getAllServices();
+      setAvailableServices(services);
       // If editing, load quote
       if (id) {
         const quote = await getQuote(id);
