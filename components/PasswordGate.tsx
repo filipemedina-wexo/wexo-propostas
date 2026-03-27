@@ -12,7 +12,7 @@ const PasswordGate: React.FC<PasswordGateProps> = ({ onSuccess }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === 'boraprosperar') {
+    if (password === 'wexo') {
       onSuccess();
     } else {
       setError(true);
