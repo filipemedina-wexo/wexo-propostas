@@ -19,11 +19,13 @@ const Dashboard: React.FC = () => {
     fetchQuotes();
   }, []);
 
-  const handleCopyLink = (id: string) => {
-    const url = `${window.location.origin}/#/view/${id}`;
-    navigator.clipboard.writeText(url);
-    setCopyId(id);
+  const handleCopyLink = (e: React.MouseEvent, id: string) => {
+    e.stopPropagation();
+    const baseUrl = window.location.href.split('#')[0];
+    const url = `${baseUrl}#/view/${id}`;
+    navigator.clipboard.writeText(url).then(() => {  setCopyId(id);
     setTimeout(() => setCopyId(null), 2000);
+  });
   };
 
   const filteredQuotes = quotes.filter(q =>
@@ -163,7 +165,7 @@ const Dashboard: React.FC = () => {
                     <td className="px-6 py-4">
                       <div className="flex items-center justify-end gap-2 opacity-60 group-hover:opacity-100 transition-opacity">
                         <button
-                          onClick={() => handleCopyLink(quote.id)}
+                          onClick={(e) => handleCopyLink(e, quote.id)}
                           className="p-2 hover:bg-slate-100 rounded-lg text-slate-500 transition-colors relative group/tooltip"
                           title="Copiar Link"
                         >
